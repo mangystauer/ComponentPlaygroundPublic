@@ -1,0 +1,44 @@
+﻿@page "/directory"
+<h3>DirectoryComponent</h3>
+
+<div class="row">
+    @foreach (var u in UserList)
+    {
+        <div class="col-4">
+            <UserComponent FirstName="@u.FirstName" LastName="@u.LastName" Message="u.Message"></UserComponent>
+            </div>
+    }
+</div>
+
+@code {
+    private List<UserModel> UserList;
+
+    public DirectoryComponent()
+    {
+        UserList = new List<UserModel>
+        {
+            new UserModel
+            {
+                FirstName = "Nikita",
+                LastName = "Gn",
+                Message = "Привет!"
+            },
+
+ new UserModel
+            {
+                FirstName = "Julia",
+                LastName = "Gn",
+                Message = "Здравствуйте!"
+            },
+                        new UserModel
+            {
+                FirstName = "Polina",
+                LastName = "Kd",
+                Message = "Салам Алейкум!"
+            }
+
+};
+
+
+    }
+}
